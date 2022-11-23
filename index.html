@@ -37,23 +37,11 @@
       <a-assets>
         <a-asset-item id="messageText" src="message.html"></a-asset-item>
         <!--
-          Image source: http://www.ghibli.jp/works/kazetachinu/#frame&gid=1&pid=1
-          Image author: Studio Ghibli
-        -->
-        <img id="kazetachinu" src="https://cdn.aframe.io/examples/ui/kazetachinu.jpg" crossorigin="anonymous"/>
-        <img id="kazetachinuPoster" src="https://cdn.aframe.io/examples/ui/kazetachinuPoster.jpg" crossorigin="anonymous"/>
-        <!--
           Image source: http://www.ghibli.jp/works/ponyo/#frame&gid=1&pid=36
           Image author: Studio Ghibli
         -->
         <img id="ponyo" src="https://cdn.aframe.io/examples/ui/ponyo.jpg" crossorigin="anonymous"/>
         <img id="ponyoPoster" src="https://cdn.aframe.io/examples/ui/ponyoPoster.jpg" crossorigin="anonymous"/>
-        <!--
-          Image source: http://www.ghibli.jp/works/karigurashi/#frame&gid=1&pid=32
-          Image author: Studio Ghibli
-        -->
-        <img id="karigurashi" src="https://cdn.aframe.io/examples/ui/karigurashi.jpg" crossorigin="anonymous"/>
-        <img id="karigurashiPoster" src="https://cdn.aframe.io/examples/ui/karigurashiPoster.jpg" crossorigin="anonymous"/>
         <a-mixin
           id="frame"
           geometry="primitive: plane; width: 0.5783552; height: 0.8192"
@@ -76,24 +64,6 @@
          ></a-mixin>
       </a-assets>
 
-      <a-entity
-        id="background"
-        position="0 0 0"
-        geometry="primitive: sphere; radius: 2.0"
-        material="color: red; side: back; shader: flat"
-        scale="0.001 0.001 0.001"
-        visible="false" class="raycastable">
-      </a-entity>
-
-      <a-entity
-        position="0 1.6 0"
-        camera look-controls="magicWindowTrackingEnabled: false; touchEnabled: false; mouseEnabled: false">
-        <a-entity
-          id="fadeBackground"
-          geometry="primitive: sphere; radius: 2.5"
-          material="color: black; side: back; shader: flat; transparent: true; opacity: 0.6" visible="false">
-        </a-entity>
-      </a-entity>
 
       <!-- Hand controls -->
       <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: .raycastable"></a-entity>
@@ -102,15 +72,9 @@
       <a-entity id="ui" position="0 1.6 -2.5">
         <!-- Poster menu -->
         <a-entity id="menu" highlight>
-          <a-entity id="karigurashiButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button">
-            <a-entity material="src: #karigurashiPoster;" mixin="poster"></a-entity>
-          </a-entity>
+      
 
-          <a-entity id="kazetachinuButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
-            <a-entity material="src: #kazetachinuPoster" mixin="poster"></a-entity>
-          </a-entity>
-
-          <a-entity id="ponyoButton" position="0.8 0 0" mixin="frame" class="raycastable menu-button">
+          <a-entity id="ponyoButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
             <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
           </a-entity>
         </a-entity>
@@ -125,8 +89,6 @@
           geometry="primitive: plane; width: 1.5; height: 1.8"
           material="color: #333333; shader: flat; transparent: false" class="raycastable">
           <a-entity id="ponyoMovieImage" mixin="movieImage" material="src: #ponyo" visible="false"></a-entity>
-          <a-entity id="kazetachinuMovieImage" mixin="movieImage" material="src: #kazetachinu" visible="false"></a-entity>
-          <a-entity id="karigurashiMovieImage" mixin="movieImage" material="src: #karigurashi" visible="false"></a-entity>
           <a-entity id="movieTitle"
             position="-0.68 -0.1 0"
             text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"></a-entity>
