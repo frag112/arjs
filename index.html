@@ -11,16 +11,15 @@
   <body>
     <a-scene>
 <a-marker preset="hiro"> 
-  <a-entity camera look-controls mouse-cursor>
+
       <a-text value="Welcome to your new room!" position="1 0.5 0" color="#E91E63" scale="1.5 1.5 1.5"></a-text>
 
       <a-box position="0 0.5 0" rotation="0 70 30" scale="0.4 0.4 0.4" color="#E91E63"
                   event-set__enter="_event: mouseenter; color: #000000">
       </a-box>  
       
-      <a-entity laser-controls="hand: left"></a-entity>
-      <a-entity laser-controls="hand: right"></a-entity>
   </a-marker>
+        <a-entity camera look-controls mouse-cursor></a-entity>
     </a-scene>
   </body>
 </html>
