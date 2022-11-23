@@ -10,6 +10,7 @@
   </head>
   <body>
     <a-scene>
+      <a-scene cursor="rayOrigin: mouse">
 <a-marker preset="hiro"> 
 
       <a-text value="Welcome to your new room!" position="1 0.5 0" color="#E91E63" scale="1.5 1.5 1.5"></a-text>
@@ -19,7 +20,7 @@
       </a-box>  
       
   </a-marker>
-        <a-entity camera look-controls mouse-cursor></a-entity>
+        <a-entity camera></a-entity> 
     </a-scene>
   </body>
 </html>
